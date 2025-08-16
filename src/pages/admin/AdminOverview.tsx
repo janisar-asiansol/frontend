@@ -26,7 +26,7 @@ const AdminOverview = () => {
       setLoading(true);
       
       // Fetch total users
-      const usersResponse = await fetch('http://localhost:3000/api/info/stats/total-users', {
+      const usersResponse = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/stats/total-users', {
         headers: {
           'Authorization': `Bearer ${user?.access_token}`
         }
@@ -34,7 +34,7 @@ const AdminOverview = () => {
       const usersData = await usersResponse.json();
       
       // Fetch active plans data (now returns totalUsers and activePlanCount)
-      const activePlansResponse = await fetch('http://localhost:3000/api/info/stats/active-plans', {
+      const activePlansResponse = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/stats/active-plans', {
         headers: {
           'Authorization': `Bearer ${user?.access_token}`
         }
@@ -62,7 +62,7 @@ const AdminOverview = () => {
   const calculateROI = async () => {
     try {
       setCalculatingROI(true);
-      const response = await fetch('http://localhost:3000/api/plan/calculate-roi', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/plan/calculate-roi', {
         method: 'GET',  // Changed to POST as it's more appropriate for this action
         headers: {
           'Authorization': `Bearer ${user?.access_token}`,

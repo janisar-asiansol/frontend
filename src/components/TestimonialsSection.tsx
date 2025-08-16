@@ -39,7 +39,7 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/review/all");
+        const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "/api/review/all");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

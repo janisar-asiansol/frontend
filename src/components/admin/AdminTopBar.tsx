@@ -28,7 +28,7 @@ const AdminTopBar = ({ onMenuClick }: AdminTopBarProps) => {
   useEffect(() => {
     const fetchAdminProfile = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/info/admin/profile', {
+        const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/admin/profile', {
           headers: {
             'Authorization': `Bearer ${user?.access_token}`
           }

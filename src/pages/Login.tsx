@@ -55,7 +55,7 @@ const Login = () => {
     setMessage("");
 
     try {
-      const response = await fetch('http://localhost:3000/auth/login', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ const Login = () => {
     setMessage("");
 
     try {
-      const response = await fetch("http://localhost:3000/auth/login/verify", {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "/auth/login/verify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -142,7 +142,7 @@ const Login = () => {
     setMessage("");
 
     try {
-      const response = await fetch('http://localhost:3000/auth/forgot-password', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/auth/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -184,7 +184,7 @@ const Login = () => {
     setMessage("");
 
     try {
-      const response = await fetch('http://localhost:3000/auth/forgot-password/verify', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/auth/forgot-password/verify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -240,7 +240,7 @@ const Login = () => {
         throw new Error("Passwords do not match");
       }
 
-      const response = await fetch('http://localhost:3000/auth/reset-password', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/auth/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

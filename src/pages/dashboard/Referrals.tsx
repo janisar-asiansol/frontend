@@ -23,7 +23,7 @@ const Referrals = () => {
     const fetchReferralData = async () => {
       try {
         // console.log("[DEBUG] Starting referral data fetch...");
-        const response = await fetch('http://localhost:3000/api/info/referral-info', {
+        const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/referral-info', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${user?.access_token}`,

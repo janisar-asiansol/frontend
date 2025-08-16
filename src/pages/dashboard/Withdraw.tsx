@@ -53,7 +53,7 @@ const Withdraw = () => {
   const fetchBalance = async () => {
     try {
       setIsLoadingBalance(true);
-      const response = await fetch("http://localhost:3000/api/info/account-balance", {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "/api/info/account-balance", {
         headers: {
           "Authorization": `Bearer ${user?.access_token}`
         }
@@ -189,7 +189,7 @@ const Withdraw = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("http://localhost:3000/api/withdraw", {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "/api/withdraw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

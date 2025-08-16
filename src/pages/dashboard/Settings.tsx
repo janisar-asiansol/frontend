@@ -32,7 +32,7 @@ const Settings = () => {
         throw new Error('First name and last name are required');
       }
 
-      const response = await fetch('http://localhost:3000/api/info/profile', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -58,7 +58,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/auth/register', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const Signup = () => {
   setError("");
 
   try {
-    const verifyResponse = await fetch("http://localhost:3000/auth/verify-otp", {
+    const verifyResponse = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "/auth/verify-otp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ 

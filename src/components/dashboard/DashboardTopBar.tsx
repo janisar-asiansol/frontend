@@ -34,7 +34,7 @@ const DashboardTopBar = ({ onMenuClick }: DashboardTopBarProps) => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/info/profile', {
+        const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/profile', {
           headers: {
             'Authorization': `Bearer ${user?.access_token}`
           }

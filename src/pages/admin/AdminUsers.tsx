@@ -47,7 +47,7 @@ const AdminUsers = () => {
     const fetchUsers = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:3000/api/info/admin/users', {
+        const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/admin/users', {
           headers: {
             'Authorization': `Bearer ${user?.access_token}`
           }

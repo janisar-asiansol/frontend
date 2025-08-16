@@ -70,7 +70,7 @@ const AdminWithdrawals = () => {
     const fetchAllWithdrawals = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch("http://localhost:3000/api/withdraw/admin", {
+        const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/withdraw/admin", {
           headers: {
             "Authorization": `Bearer ${user?.access_token}`
           }
@@ -140,7 +140,7 @@ const AdminWithdrawals = () => {
   const handleStatusUpdate = async (id: string, newStatus: "approved" | "rejected") => {
     setIsUpdating(true);
     try {
-      const response = await fetch(`http://localhost:3000/api/withdraw/${id}/status`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/withdraw/${id}/status`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -44,7 +44,7 @@ const Investments = () => {
       if (authLoading || !user?.access_token) return;
 
       try {
-        const response = await fetch("http://localhost:3000/api/plan/my-plan", {
+        const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "/api/plan/my-plan", {
           headers: {
             'Authorization': `Bearer ${user.access_token}`,
             'Content-Type': 'application/json'

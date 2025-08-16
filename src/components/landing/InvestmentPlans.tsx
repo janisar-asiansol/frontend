@@ -81,7 +81,7 @@ const InvestmentPlans = () => {
       toast.loading("Processing your request...");
 
       const response = await axios.post(
-        "http://localhost:3000/api/plan/buy",
+        process.env.NEXT_PUBLIC_API_BASE_URL + "/api/plan/buy",
         { planType },
         {
           headers: {

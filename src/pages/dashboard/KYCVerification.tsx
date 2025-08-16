@@ -33,7 +33,7 @@ const KYCVerification = () => {
         description: "Preparing your verification session...",
       });
 
-      const response = await fetch('http://localhost:3000/api/kyc/start-kyc', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/kyc/start-kyc', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

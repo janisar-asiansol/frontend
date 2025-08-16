@@ -45,16 +45,16 @@ const DashboardOverview = () => {
       setError(null);
 
       const [roiRes, activePlanRes, balanceRes, kycRes] = await Promise.all([
-        fetch('http://localhost:3000/api/info/roi-earnings', {
+        fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/roi-earnings', {
           headers: { 'Authorization': `Bearer ${user.access_token}` }
         }),
-        fetch('http://localhost:3000/api/info/active-plan', {
+        fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/active-plan', {
           headers: { 'Authorization': `Bearer ${user.access_token}` }
         }),
-        fetch('http://localhost:3000/api/info/account-balance', {
+        fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/account-balance', {
           headers: { 'Authorization': `Bearer ${user.access_token}` }
         }),
-        fetch('http://localhost:3000/api/info/kyc-status', {
+        fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/info/kyc-status', {
           headers: { 'Authorization': `Bearer ${user.access_token}` }
         })
       ]);
