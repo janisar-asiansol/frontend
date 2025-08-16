@@ -70,7 +70,7 @@ const AdminWithdrawals = () => {
     const fetchAllWithdrawals = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/withdraw/admin", {
+        const response = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + "/api/withdraw/admin", {
           headers: {
             "Authorization": `Bearer ${user?.access_token}`
           }
